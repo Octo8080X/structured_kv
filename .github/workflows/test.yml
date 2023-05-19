@@ -1,0 +1,13 @@
+name: deploy-task
+on:
+  push
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-18.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v2
+      - uses: denoland/setup-deno@v1
+       - run: >
+          deno test --unstable --no-check

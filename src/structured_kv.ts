@@ -1,12 +1,10 @@
 const SYSTEM_KEY = "SYSTEM" as const;
 const DATA_KEY = "DATA" as const;
 
-
 export interface StructuredKvNode {
-    [key: string]: StructuredKvNode;
-    _v?: number;
+  [key: string]: StructuredKvNode;
+  _v?: number;
 }
-
 
 export function decorateSystemKey(key: string[]): string[] {
   return [SYSTEM_KEY, ...key.slice(0, -1)];
